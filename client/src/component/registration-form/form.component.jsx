@@ -25,7 +25,7 @@ export default function RegistrationForm() {
   const submitForm = async (data) => {
     try {
       setIsLoading(true);
-      const res = await axios.post("/student", { data });
+      const res = await axios.post("/student", { studentData: data });
       if (res.data.error) {
         console.log(res.data.error);
         return;

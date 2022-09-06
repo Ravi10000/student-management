@@ -1,5 +1,8 @@
-const joi = require("joi");
+// model
 const Student = require("../models/student.model");
+
+// validation schema
+const studentValidationSchema = require("../validation/student.validate");
 
 module.exports.index = async (req, res) => {
   try {
@@ -32,27 +35,9 @@ module.exports.getStudentById = async (req, res) => {
 
 module.exports.register = async (req, res) => {
   try {
-    const studentValidationSchema = joi.object({
-      studentData: joi
-        .object({
-          name: joi.string().required(),
-          age: joi
-            .string()
-            .pattern(/^[0-9]{2}$/)
-            .required(),
-          email: joi.string().required(),
-          phone: joi
-            .string()
-            .length(10)
-            .pattern(/^[0-9]+$/)
-            .required(),
-          address: joi.string().required(),
-        })
-        .required(),
-    });
     const result = studentValidationSchema.validate(req.body);
     if (result.error) {
-      res.send({ error: result.error });
+      res.send(result.error.details);
       return;
     }
 
