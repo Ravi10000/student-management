@@ -80,6 +80,7 @@ export default function RegistrationForm() {
           <div className="email input">
             <CustomInput
               label="email"
+              type="email"
               register={{
                 ...register("email", {
                   required: "fill your email address",
@@ -98,6 +99,7 @@ export default function RegistrationForm() {
           <div className="phone input">
             <CustomInput
               label="phone"
+              type="number"
               register={{
                 ...register("phone", {
                   required: "fill your phone number",
