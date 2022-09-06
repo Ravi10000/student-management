@@ -51,7 +51,7 @@ export default function RegistrationForm() {
               register={{
                 ...register("name", { required: "fill your name", pattern:{
                   value: /^[A-Za-z ]+$/,
-                  message: 'invalid name'
+                  message: "invalid name"
                 } }),
               }}
               name="name"

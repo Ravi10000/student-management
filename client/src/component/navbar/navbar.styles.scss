@@ -1,10 +1,13 @@
 nav{
+    position: sticky;
+    top: 0;
     margin-bottom: 2px;
     padding: 10px 0 0 10px;
     display: flex;
     justify-content: space-around;
     list-style: none;
     border-bottom: 2px solid var(--fade-grey);
+    background-color: #fff;
     li{
         border-radius: 5px;
         padding: 10px 20px;
