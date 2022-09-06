@@ -1,48 +1,70 @@
-.students-list{
+.students-list {
     display: flex;
     flex-direction: column;
     align-items: center;
-    .hero-image{
-        img{
+
+    .hero-image {
+        img {
             width: 100%;
         }
     }
-    h1{
+
+    h1 {
         margin-bottom: 20px;
     }
-    .loader{
-        background-color: #fff;
-        height: 50px;
-        width: 50px;
-        border-radius: 50%;
-        border: 2px solid var(--primary-clr);
-        border-left-color: #fff;
-        border-top-color: #fff;
-        animation: spin .35s linear infinite;
+
+    .students-container {
+
+        .loader-container {
+            width: 100%;
+            display: grid;
+            place-items: center;
+
+            .loader {
+                background-color: #fff;
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                border: 2px solid var(--primary-clr);
+                border-left-color: #fff;
+                border-top-color: #fff;
+                animation: spin .35s linear infinite;
+            }
+        }
     }
 }
 
 @keyframes spin {
-    from{}
-    to{
+    from {}
+
+    to {
         rotate: 360deg;
     }
 }
 
 
 @media (min-width: 800px) {
-    .students-list{
-        .hero-image{
+    .students-list {
+        .hero-image {
             width: 50%;
-            img{
+
+            img {
                 width: 100%;
             }
         }
-        .students-container{
+
+        .students-container {
+            position: relative;
+            padding: 0 5%;
+            width: 100%;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             row-gap: 20px;
             column-gap: 20px;
+            .loader-container{
+                position: absolute;
+
+            }
         }
     }
 }

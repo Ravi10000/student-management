@@ -30,15 +30,20 @@
         }
     }
 
-    .loader {
-        background-color: #fff;
-        height: 50px;
-        width: 50px;
-        border-radius: 50%;
-        border: 2px solid var(--primary-clr);
-        border-left-color: #fff;
-        border-top-color: #fff;
-        animation: spin .35s linear infinite;
+    .loader-container{
+        width: 50%;
+        display: grid;
+        place-items: center;
+        .loader {
+            background-color: #fff;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            border: 2px solid var(--primary-clr);
+            border-left-color: #fff;
+            border-top-color: #fff;
+            animation: spin .35s linear infinite;
+        }
     }
 
     .back-btn {

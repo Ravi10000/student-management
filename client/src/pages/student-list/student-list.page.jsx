@@ -27,7 +27,9 @@ function StudentListPage() {
             <Card student={student} key={student._id} />
           ))
         ) : (
+          <div className="loader-container">
           <div className="loader"></div>
+        </div>
         )}
       </div>
     </div>

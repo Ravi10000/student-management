@@ -45,7 +45,9 @@ export default function StudentPage() {
           </p>
         </div>
       ) : (
-        <div className="loader"></div>
+        <div className="loader-container">
+          <div className="loader"></div>
+        </div>
       )}
       <motion.div
         className="back-btn"
