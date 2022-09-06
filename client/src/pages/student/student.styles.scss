@@ -1,0 +1,90 @@
+.student-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+
+    .image {
+        width: clamp(300px, 90%, 500px);
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .student-info {
+        p {
+            width: 300px;
+            line-height: 1.4;
+            font-size: 1.2rem;
+            word-break: break-word;
+
+            span {
+                font-weight: var(--medium);
+            }
+        }
+
+        .name {
+            font-size: 1.4rem;
+        }
+    }
+
+    .loader {
+        background-color: #fff;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        border: 2px solid var(--primary-clr);
+        border-left-color: #fff;
+        border-top-color: #fff;
+        animation: spin .35s linear infinite;
+    }
+
+    .back-btn {
+        position: absolute;
+        bottom: 5%;
+        background-color: #385A64;
+        border-radius: 50%;
+        padding: 10px;
+        margin-top: 50px;
+        width: 70px;
+        height: 70px;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        box-shadow: 1px 1px 4px #385A64;
+
+        img {
+            width: 80%;
+            rotate: 180deg;
+        }
+    }
+}
+
+@keyframes spin {
+    from {}
+
+    to {
+        rotate: 360deg;
+    }
+}
+
+@media (min-width: 800px) {
+    .student-page {
+        min-height: 80vh;
+        justify-content: center;
+        flex-direction: row;
+
+        .student-info {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            p {
+                width: 400px;
+            }
+        }
+    }
+}

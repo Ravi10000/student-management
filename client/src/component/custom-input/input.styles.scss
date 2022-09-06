@@ -1,0 +1,51 @@
+.custom-input {
+    position: relative;
+    display: grid;
+    place-items: center;
+    margin-top: 50px;
+
+    input {
+        font-family: 'josefin sans';
+        width: 100%;
+        font-size: 1.5rem;
+        background: #FFFFFF;
+        border: 1px solid #DADADA;
+        color: #65728F;
+        border-radius: 5px;
+        padding: 12px 10px;
+        outline: none;
+
+        &:focus,
+        &:valid {
+            border-color: black;
+
+            ~label {
+                opacity: 1;
+                color: #000;
+                font-weight: 600;
+                transform: translatey(-50px);
+                font-size: .9rem;
+            }
+        }
+
+        &:focus {
+            border-color: var(--fade-primary-clr);
+
+            ~label {
+                color: var(--primary-clr);
+            }
+        }
+
+    }
+
+    label {
+        opacity: .75;
+        cursor: text;
+        text-transform: capitalize;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 10px;
+        transition: all .3s ease;
+    }
+}

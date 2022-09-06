@@ -1,0 +1,11 @@
+.not-found {
+    text-align: center;
+
+    img {
+        width: clamp(200px, 100%, 1000px);
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+}

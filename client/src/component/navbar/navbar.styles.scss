@@ -1,0 +1,33 @@
+nav{
+    margin-bottom: 2px;
+    padding: 10px 0 0 10px;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    border-bottom: 2px solid var(--fade-grey);
+    li{
+        border-radius: 5px;
+        padding: 10px 20px;
+        text-transform: capitalize;
+        color: #2B468B;
+        font-size: 1.1rem;
+    }
+
+}
+
+
+@media (hover: hover){
+    nav{
+        li:hover{
+            color: #7499F1;
+        }
+    }
+}
+@media (min-width: 500px) {
+    nav{
+        justify-content: flex-start;
+        li{
+            margin-right: 10px;
+        }
+    }
+}

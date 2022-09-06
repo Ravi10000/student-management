@@ -1,0 +1,54 @@
+.custom-textarea {
+    width: 100%;
+    margin-top: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    textarea {
+        width: 100%;
+        height: 150px;
+        overflow-y: scroll;
+        resize: none;
+        font-family: 'josefin sans';
+        font-size: 1.5rem;
+        background: #FFFFFF;
+        border: 1px solid #DADADA;
+        color: #65728F;
+        border-radius: 5px;
+        padding: 10px 10px;
+        outline: none;
+
+        &:focus,
+        &:valid {
+            border-color: #000;
+
+            ~label {
+                opacity: 1;
+                color: #000;
+                font-weight: 600;
+                transform: translatey(-55px);
+                font-size: .9rem;
+            }
+        }
+
+        &:focus {
+            border-color: var(--fade-primary-clr);
+
+            ~label {
+                color: var(--primary-clr)
+            }
+        }
+    }
+
+    label {
+        opacity: .75;
+        cursor: text;
+        text-transform: capitalize;
+        position: absolute;
+        top: 30px;
+        transform: translateY(-50%);
+        left: 10px;
+        transition: all .3s ease;
+    }
+}
