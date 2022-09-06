@@ -49,7 +49,10 @@ export default function RegistrationForm() {
             <CustomInput
               label="full name"
               register={{
-                ...register("name", { required: "fill your name" }),
+                ...register("name", { required: "fill your name", pattern:{
+                  value: /^[A-Za-z ]+$/,
+                  message: 'invalid name'
+                } }),
               }}
               name="name"
               required
@@ -59,11 +62,12 @@ export default function RegistrationForm() {
           <div className="age input">
             <CustomInput
               label="age"
+              type="number"
               register={{
                 ...register("age", {
                   required: "fill your age",
                   pattern: {
-                    value: /^[0-9]{2}$/,
+                    value: /^[1-9]{1}[0-9]{0,1}$/,
                     message: "invalid age",
                   },
                 }),
