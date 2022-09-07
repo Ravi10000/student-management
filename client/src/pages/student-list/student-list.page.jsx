@@ -15,7 +15,6 @@ function StudentListPage() {
   useEffect(() => {
     (async function () {
       const res = await axios.get("/student");
-      console.log(res.data)
       setIsLoading(false);
       setStudentsList(res.data.studentsList);
     })();
