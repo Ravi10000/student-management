@@ -7,8 +7,10 @@ const {
 
 const router = express.Router();
 
-router.post("/", register);
 router.get("/:id", getStudentById);
-router.get("/", index);
+
+router.route("/")
+      .get(index)
+      .post(register)
 
 module.exports = router;

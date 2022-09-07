@@ -24,7 +24,7 @@ app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
-app.use("/student", studentRoutes);
+app.use("/students", studentRoutes);
 
 // for deployment
 // if (process.env.NODE_ENV === "production") {

@@ -14,7 +14,7 @@ export default function StudentPage() {
 
   useEffect(() => {
     (async function () {
-      const res = await axios.get(`/student/${id}`);
+      const res = await axios.get(`/students/${id}`);
       setIsLoading(false);
       if (res.data.notFound) {
         navigate("/not-found");
