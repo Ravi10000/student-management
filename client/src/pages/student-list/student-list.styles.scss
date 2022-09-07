@@ -14,12 +14,10 @@
     }
 
     .students-container {
-
         .loader-container {
             width: 100%;
             display: grid;
             place-items: center;
-
             .loader {
                 background-color: #fff;
                 height: 50px;
@@ -30,6 +28,10 @@
                 border-top-color: #fff;
                 animation: spin .35s linear infinite;
             }
+        }
+        .not-found{
+            font-weight: var(--medium);
+            grid-area: 2 / 1 / 2 / 4;
         }
     }
 }
@@ -63,7 +65,6 @@
             column-gap: 20px;
             .loader-container{
                 position: absolute;
-
             }
         }
     }

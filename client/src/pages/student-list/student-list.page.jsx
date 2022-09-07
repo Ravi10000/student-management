@@ -2,6 +2,7 @@ import "./student-list.styles.scss";
 
 // packages
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 // components
@@ -14,7 +15,8 @@ function StudentListPage() {
   useEffect(() => {
     (async function () {
       const res = await axios.get("/student");
-      setIsLoading(false)
+      console.log(res.data)
+      setIsLoading(false);
       setStudentsList(res.data.studentsList);
     })();
   }, []);
@@ -25,15 +27,20 @@ function StudentListPage() {
       </div>
       <h1>Students</h1>
       <div className="students-container">
-        {studentsList > 0 ? (
+        {isLoading ? (
+          <div className="loader-container">
+            <div className="loader"></div>
+          </div>
+        ) : studentsList.length > 0 ? (
           studentsList.map((student) => (
             <Card student={student} key={student._id} />
           ))
-        ) : isLoading ? (
-          <div className="loader-container">
-          <div className="loader"></div>
-        </div>
-        ) : (<p className="not-found">no students found!</p>)}
+        ) : (
+          <div className="not-found">
+            <p className="msg">no students found!</p>
+            <Link to="/register">Go to registration page</Link>
+          </div>
+        )}
       </div>
     </div>
   );

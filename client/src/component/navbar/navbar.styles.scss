@@ -7,7 +7,8 @@ nav{
     display: flex;
     justify-content: space-around;
     list-style: none;
-    border-bottom: 2px solid var(--fade-grey);
+    // border-bottom: 2px solid var(--fade-grey);
+    box-shadow: 1px 1px 4px var(--fade-grey);
     background-color: #fff;
     li{
         border-radius: 5px;
