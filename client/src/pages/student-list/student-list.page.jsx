@@ -9,9 +9,12 @@ import Card from "../../component/card/card.component";
 
 function StudentListPage() {
   const [studentsList, setStudentsList] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     (async function () {
       const res = await axios.get("/student");
+      setIsLoading(false)
       setStudentsList(res.data.studentsList);
     })();
   }, []);
@@ -22,15 +25,15 @@ function StudentListPage() {
       </div>
       <h1>Students</h1>
       <div className="students-container">
-        {studentsList ? (
+        {studentsList > 0 ? (
           studentsList.map((student) => (
             <Card student={student} key={student._id} />
           ))
-        ) : (
+        ) : isLoading ? (
           <div className="loader-container">
           <div className="loader"></div>
         </div>
-        )}
+        ) : (<p className="not-found">no students found!</p>)}
       </div>
     </div>
   );

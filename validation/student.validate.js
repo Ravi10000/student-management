@@ -9,7 +9,7 @@ const studentValidationSchema = joi.object({
         .required(),
       age: joi
         .string()
-        .pattern(/^[0-9]{2}$/)
+        .pattern(/^[1-9]{1}[0-9]{0,1}$/)
         .required(),
       email: joi
         .string()

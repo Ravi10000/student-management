@@ -10,9 +10,12 @@ export default function StudentPage() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [student, setStudent] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     (async function () {
       const res = await axios.get(`/student/${id}`);
+      setIsLoading(false);
       if (res.data.notFound) {
         navigate("/not-found");
         return;
@@ -44,10 +47,12 @@ export default function StudentPage() {
             <span>address:</span> {student.address}
           </p>
         </div>
-      ) : (
+      ) : isLoading ? (
         <div className="loader-container">
           <div className="loader"></div>
         </div>
+      ) : (
+        <p>no student found!</p>
       )}
       <motion.div
         className="back-btn"
